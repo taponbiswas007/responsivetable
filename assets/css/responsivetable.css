@@ -1,0 +1,240 @@
+.student-absent-table-wrapper {
+  margin-top: 20px;
+  padding: 30px;
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+}
+.student-absent-table-wrapper .table-header-and-filter-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+.student-absent-table-wrapper .table-header-and-filter-area h1 {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.student-absent-table-wrapper .table-header-and-filter-area button {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 4px;
+  color: #00025c;
+  text-transform: capitalize;
+  -webkit-box-shadow: 2px 6px 15px 0 rgba(69, 65, 78, 0.2);
+          box-shadow: 2px 6px 15px 0 rgba(69, 65, 78, 0.2);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin-top: -15px;
+}
+.student-absent-table-wrapper .table-header-and-filter-area button:hover {
+  background: #888;
+  color: #ffffff;
+}
+.student-absent-table-wrapper .table-header-and-filter-area .filter-popup-area {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #ffffff;
+  -webkit-box-shadow: 0 4px 10px rgba(69, 69, 0, 0.6);
+          box-shadow: 0 4px 10px rgba(69, 69, 0, 0.6);
+  z-index: 5;
+  padding: 20px;
+  border-radius: 8px;
+  display: none;
+}
+.student-absent-table-wrapper .table-header-and-filter-area .filter-popup-area h1 {
+  font-size: 15px;
+}
+.student-absent-table-wrapper .table-header-and-filter-area .filter-popup-area ul {
+  padding-left: 20px;
+}
+.student-absent-table-wrapper .table-header-and-filter-area .filter-popup-area ul li {
+  font-size: 13px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  text-transform: capitalize;
+  padding: 5px 5px;
+  cursor: pointer;
+}
+.student-absent-table-wrapper .table-header-and-filter-area .filter-popup-area ul li:hover {
+  background: #f5f7fd;
+  color: #000000 !important;
+}
+.student-absent-table-wrapper .table-header-and-filter-area .filter-popup-area ul li .filteritemchack {
+  display: none;
+}
+.student-absent-table-wrapper .details-main-area {
+  overflow: scroll;
+  height: 440px;
+  position: relative;
+  cursor: pointer;
+}
+.student-absent-table-wrapper .details-main-area .details {
+  min-width: 768px;
+  padding-right: 10px;
+  background: #ffffff;
+  border-bottom: 1px solid #1a2035;
+}
+.student-absent-table-wrapper .details-main-area .details:first-child {
+  border-top: 1px solid #1a2035;
+}
+.student-absent-table-wrapper .details-main-area .details ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
+  position: relative;
+}
+.student-absent-table-wrapper .details-main-area .details ul .studentid {
+  position: sticky;
+  left: 0;
+  top: 0;
+  padding: 25px 10px;
+  background: #ffffff;
+}
+.student-absent-table-wrapper .details-main-area .details ul li {
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  text-transform: capitalize;
+  vertical-align: middle;
+}
+.student-absent-table-wrapper .details-main-area .details ul li img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.student-absent-table-wrapper .details-main-area .details ul li button {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 4px;
+  color: #00025c;
+  text-transform: capitalize;
+  -webkit-box-shadow: 2px 6px 15px 0 rgba(69, 65, 78, 0.2);
+          box-shadow: 2px 6px 15px 0 rgba(69, 65, 78, 0.2);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.student-absent-table-wrapper .details-main-area .details ul li button:hover {
+  background: #888;
+  color: #ffffff;
+}
+.student-absent-table-wrapper .details-main-area .details ul li span {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #ffffff;
+}
+.student-absent-table-wrapper .details-main-area .details ul li .statusactive {
+  background: #20c997;
+}
+.student-absent-table-wrapper .details-main-area .details ul li .statusinactive {
+  background: #910101;
+}
+.student-absent-table-wrapper .details-main-area .details .listarea .listitem:nth-child(1) {
+  width: 70px;
+}
+.student-absent-table-wrapper .details-main-area .details .listarea .listitem:nth-child(2) {
+  min-width: 50px;
+}
+.student-absent-table-wrapper .details-main-area .details .listarea .listitem:nth-child(3) {
+  min-width: 120px;
+}
+.student-absent-table-wrapper .details-main-area .details .listarea .listitem:nth-child(4) {
+  min-width: 70px;
+}
+.student-absent-table-wrapper .details-main-area .details .listarea .listitem:nth-child(5) {
+  min-width: 40px;
+}
+.student-absent-table-wrapper .details-main-area .details .listarea .listitem:nth-child(6) {
+  min-width: 120px;
+}
+.student-absent-table-wrapper .details-main-area {
+  position: relative;
+  overflow: scroll;
+  height: 440px;
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+}
+.student-absent-table-wrapper .details-main-area::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
+.student-absent-table-wrapper .scroll-gradient {
+  position: absolute;
+  top: 71px;
+  bottom: 31px;
+  pointer-events: none;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  z-index: 1;
+}
+.student-absent-table-wrapper .scroll-gradient.left {
+  left: 100px;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.06)), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.06), rgba(255, 255, 255, 0));
+  opacity: 0;
+  width: 10px;
+}
+.student-absent-table-wrapper .scroll-gradient.right {
+  right: 30px;
+  background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.2)), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0));
+  opacity: 1;
+  width: 20px;
+}
+
+/* WebKit-based browsers (Chrome, Safari, Edge) */
+.main-body-wrapper::-webkit-scrollbar {
+  width: 12px;
+  /* Adjust the width of the scrollbar */
+}
+
+.main-body-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* Background color of the scrollbar track */
+}
+
+.main-body-wrapper::-webkit-scrollbar-thumb {
+  background: #888;
+  /* Color of the scrollbar thumb */
+  border-radius: 6px;
+  /* Optional: round the corners of the scrollbar thumb */
+}
+
+.main-body-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  /* Color when hovered */
+}
+
+/* Firefox */
+.main-body-wrapper {
+  scrollbar-width: thin;
+  /* Make the scrollbar thinner */
+  scrollbar-color: #888 #f1f1f1;
+  /* Thumb color, Track color */
+}
+
+/* Internet Explorer 10+ and Edge (older versions) */
+.main-body-wrapper {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}

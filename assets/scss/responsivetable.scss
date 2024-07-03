@@ -1,0 +1,288 @@
+@import 'utils/variables';
+
+
+
+.student-absent-table-wrapper {
+    margin-top: 20px;
+    padding: 30px;
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+
+    .table-header-and-filter-area {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        h1 {
+            font-size: 20px;
+            font-family: $roboto;
+            text-transform: capitalize;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        button {
+            background: $white;
+            padding: 10px;
+            border-radius: 4px;
+            color: $blue;
+            text-transform: capitalize;
+            box-shadow: 2px 6px 15px 0 rgba(69, 65, 78, 0.2);
+            transition: all .3s ease;
+            margin-top: -15px;
+
+            &:hover {
+                background: #888;
+                color: $white;
+            }
+        }
+
+        .filter-popup-area {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: $white;
+            box-shadow: 0 4px 10px rgba(69, 69, 0, 0.6);
+            z-index: 5;
+            padding: 20px;
+            border-radius: 8px;
+            display: none;
+
+            h1 {
+                font-size: 15px;
+
+            }
+
+            ul {
+                padding-left: 20px;
+
+                li {
+                    font-size: 13px;
+                    font-family: $roboto;
+                    font-weight: 400;
+                    text-transform: capitalize;
+                    padding: 5px 5px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: $gray;
+                        color: $black !important;
+                    }
+
+                    .filteritemchack {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .details-main-area {
+        overflow: scroll;
+        height: 440px;
+        position: relative;
+        cursor: pointer;
+
+        .details {
+            //box-shadow: 0 0 15px 2px rgba(69, 65, 78, 0.2);
+            //border-radius: 8px;
+            min-width: 768px;
+            // margin: 10px 0;
+            padding-right: 10px;
+            background: $white;
+            border-bottom: 1px solid $blackbg;
+
+            &:first-child {
+                border-top: 1px solid $blackbg;
+            }
+
+
+            ul {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                column-gap: 10px;
+                position: relative;
+
+                .studentid {
+                    position: sticky;
+                    left: 0;
+                    top: 0;
+                    padding: 25px 10px;
+                    background: $white;
+                    // border-radius: 8px 0 0 8px;
+
+                    // box-shadow:
+                    //     -15px 0 15px -10px rgba(69, 65, 78, 0.2),
+
+                    //     0 -15px 15px -10px rgba(69, 65, 78, 0.2),
+
+                    //     0 15px 15px -10px rgba(69, 65, 78, 0.2);
+
+
+
+                }
+
+                li {
+                    font-size: 14px;
+                    font-family: $inter;
+                    font-weight: 400;
+                    text-transform: capitalize;
+                    vertical-align: middle;
+
+                    img {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+
+                    }
+
+                    button {
+                        background: $white;
+                        padding: 10px;
+                        border-radius: 4px;
+                        color: $blue;
+                        text-transform: capitalize;
+                        box-shadow: 2px 6px 15px 0 rgba(69, 65, 78, 0.2);
+                        transition: all .3s ease;
+
+                        &:hover {
+                            background: #888;
+                            color: $white;
+                        }
+                    }
+
+                    span {
+
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                        color: $white;
+                    }
+
+                    .statusactive {
+                        background: $green;
+                    }
+
+                    .statusinactive {
+                        background: $red;
+                    }
+
+                    // #absentStudentcontactbar{
+                    //     display: none;
+                    // }
+                }
+            }
+
+            .listarea {
+                .listitem {
+                    &:nth-child(1) {
+                        width: 70px;
+                    }
+
+                    &:nth-child(2) {
+                        min-width: 50px;
+                    }
+
+                    &:nth-child(3) {
+                        min-width: 120px;
+                    }
+
+                    &:nth-child(4) {
+                        min-width: 70px;
+                    }
+
+                    &:nth-child(5) {
+                        min-width: 40px;
+                    }
+
+                    &:nth-child(6) {
+                        min-width: 120px;
+                    }
+
+                }
+            }
+        }
+    }
+
+    .details-main-area {
+        position: relative;
+        overflow: scroll;
+        height: 440px;
+        -ms-overflow-style: none;
+        /* Internet Explorer 10+ */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .details-main-area::-webkit-scrollbar {
+        display: none;
+        /* Safari and Chrome */
+    }
+
+    .scroll-gradient {
+        position: absolute;
+        top: 71px;
+        bottom: 31px;
+
+        pointer-events: none;
+        transition: opacity 0.3s;
+        z-index: 1;
+    }
+
+    .scroll-gradient.left {
+        left: 100px;
+        background: linear-gradient(to right, rgba(0, 0, 0, .06), rgba(255, 255, 255, 0));
+        opacity: 0;
+        width: 10px;
+    }
+
+    .scroll-gradient.right {
+        right: 30px;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0));
+        opacity: 1;
+        width: 20px;
+    }
+
+
+
+
+}
+
+        /* WebKit-based browsers (Chrome, Safari, Edge) */
+        .main-body-wrapper::-webkit-scrollbar {
+            width: 12px;
+            /* Adjust the width of the scrollbar */
+        }
+
+        .main-body-wrapper::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            /* Background color of the scrollbar track */
+        }
+
+        .main-body-wrapper::-webkit-scrollbar-thumb {
+            background: #888;
+            /* Color of the scrollbar thumb */
+            border-radius: 6px;
+            /* Optional: round the corners of the scrollbar thumb */
+        }
+
+        .main-body-wrapper::-webkit-scrollbar-thumb:hover {
+            background: #555;
+            /* Color when hovered */
+        }
+
+        /* Firefox */
+        .main-body-wrapper {
+            scrollbar-width: thin;
+            /* Make the scrollbar thinner */
+            scrollbar-color: #888 #f1f1f1;
+            /* Thumb color, Track color */
+        }
+
+        /* Internet Explorer 10+ and Edge (older versions) */
+        .main-body-wrapper {
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+        }
