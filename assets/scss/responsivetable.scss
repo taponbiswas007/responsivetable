@@ -2,210 +2,9 @@
 
 
 
-.student-absent-table-wrapper {
-    margin-top: 20px;
-    padding: 30px;
+.table-container {
     width: 100%;
-    border-radius: 10px;
     position: relative;
-
-    .table-header-and-filter-area {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-
-        h1 {
-            font-size: 20px;
-            font-family: $roboto;
-            text-transform: capitalize;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        button {
-            background: $white;
-            padding: 10px;
-            border-radius: 4px;
-            color: $blue;
-            text-transform: capitalize;
-            box-shadow: 2px 6px 15px 0 rgba(69, 65, 78, 0.2);
-            transition: all .3s ease;
-            margin-top: -15px;
-
-            &:hover {
-                background: #888;
-                color: $white;
-            }
-        }
-
-        .filter-popup-area {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: $white;
-            box-shadow: 0 4px 10px rgba(69, 69, 0, 0.6);
-            z-index: 5;
-            padding: 20px;
-            border-radius: 8px;
-            display: none;
-
-            h1 {
-                font-size: 15px;
-
-            }
-
-            ul {
-                padding-left: 20px;
-
-                li {
-                    font-size: 13px;
-                    font-family: $roboto;
-                    font-weight: 400;
-                    text-transform: capitalize;
-                    padding: 5px 5px;
-                    cursor: pointer;
-
-                    &:hover {
-                        background: $gray;
-                        color: $black !important;
-                    }
-
-                    .filteritemchack {
-                        display: none;
-                    }
-                }
-            }
-        }
-    }
-
-
-    .details-main-area {
-        overflow: scroll;
-        height: 440px;
-        position: relative;
-        cursor: pointer;
-
-        .details {
-            //box-shadow: 0 0 15px 2px rgba(69, 65, 78, 0.2);
-            //border-radius: 8px;
-            min-width: 768px;
-            // margin: 10px 0;
-            padding-right: 10px;
-            background: $white;
-            border-bottom: 1px solid $blackbg;
-
-            &:first-child {
-                border-top: 1px solid $blackbg;
-            }
-
-
-            ul {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                column-gap: 10px;
-                position: relative;
-
-                .studentid {
-                    position: sticky;
-                    left: 0;
-                    top: 0;
-                    padding: 25px 10px;
-                    background: $white;
-                    // border-radius: 8px 0 0 8px;
-
-                    // box-shadow:
-                    //     -15px 0 15px -10px rgba(69, 65, 78, 0.2),
-
-                    //     0 -15px 15px -10px rgba(69, 65, 78, 0.2),
-
-                    //     0 15px 15px -10px rgba(69, 65, 78, 0.2);
-
-
-
-                }
-
-                li {
-                    font-size: 14px;
-                    font-family: $inter;
-                    font-weight: 400;
-                    text-transform: capitalize;
-                    vertical-align: middle;
-
-                    img {
-                        width: 50px;
-                        height: 50px;
-                        border-radius: 50%;
-
-                    }
-
-                    button {
-                        background: $white;
-                        padding: 10px;
-                        border-radius: 4px;
-                        color: $blue;
-                        text-transform: capitalize;
-                        box-shadow: 2px 6px 15px 0 rgba(69, 65, 78, 0.2);
-                        transition: all .3s ease;
-
-                        &:hover {
-                            background: #888;
-                            color: $white;
-                        }
-                    }
-
-                    span {
-
-                        padding: 5px 10px;
-                        border-radius: 5px;
-                        color: $white;
-                    }
-
-                    .statusactive {
-                        background: $green;
-                    }
-
-                    .statusinactive {
-                        background: $red;
-                    }
-
-                    // #absentStudentcontactbar{
-                    //     display: none;
-                    // }
-                }
-            }
-
-            .listarea {
-                .listitem {
-                    &:nth-child(1) {
-                        width: 70px;
-                    }
-
-                    &:nth-child(2) {
-                        min-width: 50px;
-                    }
-
-                    &:nth-child(3) {
-                        min-width: 120px;
-                    }
-
-                    &:nth-child(4) {
-                        min-width: 70px;
-                    }
-
-                    &:nth-child(5) {
-                        min-width: 40px;
-                    }
-
-                    &:nth-child(6) {
-                        min-width: 120px;
-                    }
-
-                }
-            }
-        }
-    }
 
     .details-main-area {
         position: relative;
@@ -214,8 +13,181 @@
         -ms-overflow-style: none;
         /* Internet Explorer 10+ */
         scrollbar-width: none;
-        /* Firefox */
+        scroll-behavior: smooth;
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+
+            th,
+            td {
+                padding: 8px;
+                border: 1px solid $table-border-color;
+            }
+
+            th {
+                position: sticky;
+                top: 0;
+                z-index: 3;
+                background-color: $table-header-color;
+                color: white;
+                border: 1px solid $table-header-border;
+            }
+
+            thead th {
+                top: auto;
+                z-index: 3;
+            }
+
+            thead {
+                tr {
+
+                    th {
+                        height: 50px;
+
+                        .billdetailsinputbox {
+                            width: 100%;
+                            padding: 2px;
+                            font-size: 0.9375rem;
+                            font-weight: 400;
+                            color: #6f6b7d !important;
+                            background-color: #fff;
+                            background-clip: padding-box;
+                            border: 1px solid #dbdade;
+                            border-radius: 6px;
+                            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+                        }
+                    }
+                }
+            }
+
+            thead tr:first-child th {
+                top: 0;
+                border: 1px solid $table-header-border;
+            }
+
+            thead tr:nth-child(2) th {
+                top: 64px;
+                border: 1px solid $table-header-border; // Adjust this value according to the height of the header cells
+            }
+
+            
+            thead tr th:first-child {
+                position: sticky;
+                left: 0;
+                z-index: 4;
+                background-color: $table-header-color;
+                color: white;
+                border: 1px solid $table-header-border;
+            }
+            tbody tr td:first-child{
+                position: sticky;
+                left: 0;
+                z-index: 1;
+                background-color: $table-bg-transparent;
+                color: black;
+                border: 1px solid $table-border-color;
+            }
+            tbody tr:nth-child(2) td:first-child {
+                z-index: 2;
+            }
+
+            tbody td {
+                background-color: $table-bg-transparent;
+                height: 50px;
+            }
+
+            thead{
+                tr{
+                    th{
+                        &::after
+                        &:nth-child(1){
+                            min-width: 40px;
+                        }
+                        &:nth-child(2){
+                            min-width: 200px;
+                        }
+                        &:nth-child(3){
+                            min-width: 100px;
+                        }
+                        &:nth-child(4){
+                            min-width: 150px;
+                        }
+                        &:nth-child(5){
+                            min-width: 100px;
+                        }
+                        &:nth-child(6){
+                            min-width: 120px;
+                        }
+                        &:nth-child(7){
+                            min-width: 170px;
+                        }
+                        &:nth-child(8){
+                            min-width: 150px;
+                        }
+                        &:nth-child(9){
+                            min-width: 120px;
+                        }
+                        &:nth-child(10){
+                            min-width: 170px;
+                        }
+                        &:nth-child(11){
+                            min-width: 150px;
+                        }
+                        &:nth-child(12){
+                            min-width: 120px;
+                        }
+                        &:nth-child(13){
+                            min-width: 120px;
+                        }
+                        &:nth-child(14){
+                            min-width: 120px;
+                        }
+                        &:nth-child(15){
+                            min-width: 120px;
+                        }
+                        &:nth-child(16){
+                            min-width: 120px;
+                        }
+                        &:nth-child(17){
+                            min-width: 120px;
+                        }
+                        &:nth-child(18){
+                            min-width: 120px;
+                        }
+                        &:nth-child(19){
+                            min-width: 120px;
+                        }
+                        &:nth-child(20){
+                            min-width: 120px;
+                        }
+                        &:nth-child(21){
+                            min-width: 120px;
+                        }
+                        &:nth-child(22){
+                            min-width: 120px;
+                        }
+                        &:nth-child(23){
+                            min-width: 120px;
+                        }
+                        &:nth-child(24){
+                            min-width: 120px;
+                        }
+                        &:nth-child(25){
+                            min-width: 120px;
+                        }
+                        &:nth-child(26){
+                            min-width: 120px;
+                        }
+                    }
+                }
+            }
+
+        }
+
+
     }
+
 
     .details-main-area::-webkit-scrollbar {
         display: none;
@@ -224,8 +196,8 @@
 
     .scroll-gradient {
         position: absolute;
-        top: 71px;
-        bottom: 31px;
+        top: 0;
+        bottom: 0;
 
         pointer-events: none;
         transition: opacity 0.3s;
@@ -233,56 +205,20 @@
     }
 
     .scroll-gradient.left {
-        left: 100px;
+        left: 40px;
         background: linear-gradient(to right, rgba(0, 0, 0, .06), rgba(255, 255, 255, 0));
         opacity: 0;
         width: 10px;
     }
 
     .scroll-gradient.right {
-        right: 30px;
+        right: 0;
         background: linear-gradient(to left, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0));
         opacity: 1;
-        width: 20px;
+        width: 50px;
     }
 
 
 
 
 }
-
-        /* WebKit-based browsers (Chrome, Safari, Edge) */
-        .main-body-wrapper::-webkit-scrollbar {
-            width: 12px;
-            /* Adjust the width of the scrollbar */
-        }
-
-        .main-body-wrapper::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            /* Background color of the scrollbar track */
-        }
-
-        .main-body-wrapper::-webkit-scrollbar-thumb {
-            background: #888;
-            /* Color of the scrollbar thumb */
-            border-radius: 6px;
-            /* Optional: round the corners of the scrollbar thumb */
-        }
-
-        .main-body-wrapper::-webkit-scrollbar-thumb:hover {
-            background: #555;
-            /* Color when hovered */
-        }
-
-        /* Firefox */
-        .main-body-wrapper {
-            scrollbar-width: thin;
-            /* Make the scrollbar thinner */
-            scrollbar-color: #888 #f1f1f1;
-            /* Thumb color, Track color */
-        }
-
-        /* Internet Explorer 10+ and Edge (older versions) */
-        .main-body-wrapper {
-            -ms-overflow-style: -ms-autohiding-scrollbar;
-        }

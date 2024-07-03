@@ -20,53 +20,37 @@ $(document).ready(function() {
             }
         }
 
-        $element.swipe({
-            swipeStatus: function(event, phase, direction, distance, duration, fingers) {
-                var scrollLeft = $element.scrollLeft();
-                var scrollTop = $element.scrollTop();
-        
-                if (phase === "move") {
-                    if (direction === "left") {
-                        $element.scrollLeft(scrollLeft + distance);
-                    }
-                    if (direction === "right") {
-                        $element.scrollLeft(scrollLeft - distance);
-                    }
-                    if (direction === "up") {
-                        $element.scrollTop(scrollTop + distance);
-                    }
-                    if (direction === "down") {
-                        $element.scrollTop(scrollTop - distance);
-                    }
-                    updateScrollEffect();
-                }
-            },
-            threshold: 0,
-            fingers: 'all'
-        });
-        
-        $element.on('touchstart', function(e) {
-            var startX = e.originalEvent.touches[0].pageX;
-            var startY = e.originalEvent.touches[0].pageY;
-            var scrollLeft = $element.scrollLeft();
-            var scrollTop = $element.scrollTop();
-        
-            $(document).on('touchmove.detailsMainArea', function(e) {
-                var x = e.originalEvent.touches[0].pageX;
-                var y = e.originalEvent.touches[0].pageY;
-                $element.scrollLeft(scrollLeft - (x - startX));
-                $element.scrollTop(scrollTop - (y - startY));
+        let isScrolling = false;
+        let startX, scrollLeft;
+
+        $element.on('mousedown touchstart', function(e) {
+            // Allow default behavior for input fields and buttons
+            if ($(e.target).is('input, textarea, select, button')) {
+                return true;
+            }
+
+            isScrolling = true;
+            startX = e.pageX || e.originalEvent.touches[0].pageX;
+            scrollLeft = $element.scrollLeft();
+            $element.addClass('scrolling'); // Optional: Add a class for visual feedback
+
+            $(document).on('mousemove touchmove', function(e) {
+                if (!isScrolling) return;
+                const x = e.pageX || e.originalEvent.touches[0].pageX;
+                const walk = (startX - x) * 2; // Adjust the scroll speed as needed
+                $element.scrollLeft(scrollLeft + walk);
                 updateScrollEffect();
             });
-        
-            $(document).on('touchend.detailsMainArea', function() {
-                $(document).off('.detailsMainArea');
+
+            $(document).on('mouseup touchend', function() {
+                isScrolling = false;
+                $(document).off('mousemove touchmove');
+                $(document).off('mouseup touchend');
+                $element.removeClass('scrolling'); // Optional: Remove the class for visual feedback
             });
-        
+
             return false;
         });
-        
-        
 
         $element.on('scroll', function() {
             updateScrollEffect();
