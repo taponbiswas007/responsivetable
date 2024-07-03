@@ -95,12 +95,35 @@
             tbody td {
                 background-color: $table-bg-transparent;
                 height: 50px;
+                text-align: center;
+                vertical-align: middle;
             }
 
             thead{
                 tr{
                     th{
-                        &::after
+                        text-align: center;
+                        vertical-align: middle;
+                        &::after{
+                            content: ' ';
+                            background: #ffffff;
+                            height: 100%;
+                            width: 1px;
+                            left: -1px;
+                            top: 0;
+                            bottom: 0;
+                            position: absolute;
+                        }
+                        &::before{
+                            content: ' ';
+                            background: #ffffff;
+                            height: 1px;
+                            width: 100%;
+                            left: 0;
+                            top: -1px;
+                            right: 0;
+                            position: absolute;
+                        }
                         &:nth-child(1){
                             min-width: 40px;
                         }

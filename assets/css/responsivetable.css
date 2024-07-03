@@ -26,7 +26,7 @@
   z-index: 3;
   background-color: #5d596c;
   color: white;
-  border: 1px solid white;
+  border: 1px solid #ffffff;
 }
 .table-container .details-main-area table thead th {
   top: auto;
@@ -52,11 +52,11 @@
 }
 .table-container .details-main-area table thead tr:first-child th {
   top: 0;
-  border: 1px solid white;
+  border: 1px solid #ffffff;
 }
 .table-container .details-main-area table thead tr:nth-child(2) th {
   top: 64px;
-  border: 1px solid white;
+  border: 1px solid #ffffff;
 }
 .table-container .details-main-area table thead tr th:first-child {
   position: sticky;
@@ -64,7 +64,7 @@
   z-index: 4;
   background-color: #5d596c;
   color: white;
-  border: 1px solid white;
+  border: 1px solid #ffffff;
 }
 .table-container .details-main-area table tbody tr td:first-child {
   position: sticky;
@@ -80,8 +80,34 @@
 .table-container .details-main-area table tbody td {
   background-color: #ffffff;
   height: 50px;
+  text-align: center;
+  vertical-align: middle;
 }
-.table-container .details-main-area table thead tr th::after .table-container .details-main-area table thead tr th:nth-child(1) {
+.table-container .details-main-area table thead tr th {
+  text-align: center;
+  vertical-align: middle;
+}
+.table-container .details-main-area table thead tr th::after {
+  content: " ";
+  background: #ffffff;
+  height: 100%;
+  width: 1px;
+  left: -1px;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+}
+.table-container .details-main-area table thead tr th::before {
+  content: " ";
+  background: #ffffff;
+  height: 1px;
+  width: 100%;
+  left: 0;
+  top: -1px;
+  right: 0;
+  position: absolute;
+}
+.table-container .details-main-area table thead tr th:nth-child(1) {
   min-width: 40px;
 }
 .table-container .details-main-area table thead tr th:nth-child(2) {
